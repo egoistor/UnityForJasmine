@@ -14,15 +14,19 @@ public class AiringScript: MonoBehaviour
     public GameObject begin;
     public GameObject then;
     public GameObject curing;
-    public Slider Mslider;
+    public GameObject Down;
+    public GameObject finish;
+    public GameObject mix;
+    public GameObject FlowerGroup;
+    public GameObject ConfirmChoose;
     public GameObject Basket_tall;
     public GameObject Basket_tall_with_flower;
     public GameObject Basket_flat;
     public GameObject Basket_flat_with_flower;
-    public GameObject Down;
-    public GameObject finish;
-    public GameObject FlowerGroup;
-    public GameObject ConfirmChoose;
+    public GameObject Basket_flat_with_tea;
+    public GameObject Basket_flat_with_yulan;
+    public GameObject Basket_flat_with_mix;
+    public Slider Mslider;
     public Text tips_text;
     public Text then_txt;
     public Text warning;
@@ -47,9 +51,13 @@ public class AiringScript: MonoBehaviour
     void Start()
     {
         Basket_flat_with_flower.SetActive(false);
+        Basket_flat_with_tea.SetActive(false);
+        Basket_flat_with_yulan.SetActive(false);
+        Basket_flat_with_mix.SetActive(false);
         Basket_tall.SetActive(false);
         Temperate.SetActive(false);
         then.SetActive(false);
+        mix.SetActive(false);
         then_txt.text = "";
         warning.text = "";
         anim = Rake.GetComponent<Animation>();
@@ -114,6 +122,7 @@ public class AiringScript: MonoBehaviour
         isChange = true;
         title.text = "筛花";
         chooseFlowerText.text = "请选择四朵中的其中两朵，作为选择样例，其余花朵将被丢弃";
+        ConfirmChoose.SetActive(true);
         Destroy(Temperate);
         Destroy(anim);
         Destroy(finish);
@@ -131,9 +140,23 @@ public class AiringScript: MonoBehaviour
             Destroy(flower2);
             Destroy(flower3);
             Destroy(flower4);
-
+            Destroy(ConfirmChoose);
+            Basket_tall.SetActive(false);
+            Basket_flat_with_flower.SetActive(false);
+            Basket_flat_with_tea.SetActive(true);
+            Basket_flat_with_yulan.SetActive(true);
+            mix.SetActive(true);
+            title.text = "调香";
+            chooseFlowerText.text = "";
         }
             
+    }
+
+    public void MixTeaAndYulan()
+    {
+        Basket_flat_with_tea.SetActive(false);
+        Basket_flat_with_yulan.SetActive(false);
+        Basket_flat_with_mix.SetActive(true);
     }
 
     public void Flower1_isChoosed()
