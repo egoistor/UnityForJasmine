@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pick flower.unity
     guid: f4483db1261aa664486184910c321da0
+  - enabled: 1
+    path: Assets/Scenes/Night.unity
+    guid: 2c5f6578499634646a3cf10d392c001e
   m_configObjects: {}
