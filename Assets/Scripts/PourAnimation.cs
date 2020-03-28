@@ -31,14 +31,14 @@ public class PourAnimation : MonoBehaviour
             {
                 if(hitInfo.collider.gameObject.name.Contains("Basket"))
                 {
-                    anim =  hitInfo.collider.GetComponent<Animation>();
+                    anim = hitInfo.collider.GetComponent<Animation>();
                     anim.Play();
-                    StartCoroutine(ChangeMaterial());
                     startToDetect = false;
+                    StartCoroutine(ChangeMaterial());
                 }
             }
         }
-        if(anim != null && anim.isPlaying == false)
+        if(anim != null && anim.isPlaying == false && i < 7)
         {
             startToDetect = true;
             anim = null;
@@ -57,15 +57,18 @@ public class PourAnimation : MonoBehaviour
             if (i == 7)
             {
                 mix.SetActive(true);
+                startToDetect = false;
             }
         }
         else
         {
             renderer.material = tea;
             image[i].sprite = cha;
-            i++; if (i == 7)
+            i++;
+            if (i == 7)
             {
                 mix.SetActive(true);
+                startToDetect = false;
             }
         }
         yield return null;

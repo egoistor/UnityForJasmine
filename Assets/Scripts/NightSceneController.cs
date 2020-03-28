@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NightSceneController : MonoBehaviour
 {
@@ -25,8 +26,8 @@ public class NightSceneController : MonoBehaviour
     public GameObject tips;
     public Text title;
     public Text tips_text;
-    public Material flowerWithTea;
-    public GameObject flower_tea;
+    public GameObject flowerOrTea;
+    public GameObject flowerAndTea;
     public Slider Mslider;
     public GameObject finish;
     private bool isCuring = false;
@@ -100,17 +101,20 @@ public class NightSceneController : MonoBehaviour
 
     public void PlayMix()
     {
-        Destroy(basketWithFlower);
-        Destroy(basketWithTea);
         anim = Rake.GetComponent<Animation>();
         anim.Play();
+        Destroy(mix);
+        StartCoroutine(Mix());
+    }
+    IEnumerator Mix()
+    {
+        yield return new WaitForSeconds(3f);
         for (int i = 0; i < 7; i++)
         {
             image[i].sprite = moli_cha;
         }
-        Destroy(mix);
-        MeshRenderer renderer = flower_tea.GetComponent<MeshRenderer>();
-        renderer.material = flowerWithTea;
+        flowerOrTea.SetActive(false);
+        flowerAndTea.SetActive(true);
         next.SetActive(true);
     }
 
@@ -162,5 +166,10 @@ public class NightSceneController : MonoBehaviour
             tips_text.text = "温度为30-35度最为适宜";
         }
        
+    }
+
+    public void Finish()
+    {
+        SceneManager.LoadScene("Day2");
     }
 }

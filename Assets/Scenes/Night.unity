@@ -970,7 +970,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 292855161}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1705561478}
+        m_TargetAssemblyTypeName: NightSceneController, Assembly-CSharp
+        m_MethodName: Finish
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &292855161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1100,8 +1112,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1140,6 +1152,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mix
       objectReference: {fileID: 0}
+    - target: {fileID: 7899004951397557196, guid: 770a2fdf7d47b664b94ca7653bfacbcd,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5089c2e53751a9d4b981d257ffd252c3, type: 2}
     - target: {fileID: 8523772351874988259, guid: 770a2fdf7d47b664b94ca7653bfacbcd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2022,8 +2039,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2462,6 +2479,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1028454967 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7158951036712706855, guid: 770a2fdf7d47b664b94ca7653bfacbcd,
+    type: 3}
+  m_PrefabInstance: {fileID: 345963106}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1039393982
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,8 +2747,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2798,8 +2821,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3191,8 +3214,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3381,7 +3404,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0.25
@@ -3560,8 +3583,8 @@ MonoBehaviour:
   tips: {fileID: 0}
   title: {fileID: 753138956}
   tips_text: {fileID: 2036217923}
-  flowerWithTea: {fileID: 2100000, guid: f5b6fad72deab1f45b854760aa8787a4, type: 2}
-  flower_tea: {fileID: 277907064}
+  flowerOrTea: {fileID: 277907064}
+  flowerAndTea: {fileID: 1028454967}
   Mslider: {fileID: 154197657}
   finish: {fileID: 292855158}
 --- !u!4 &1705561479
@@ -4022,8 +4045,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4505,8 +4528,6 @@ Animation:
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 30f4f29404040c044bb83e0b952be72a, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: abd8369510e7afd4197ddd2c749eb87c, type: 2}
-  - {fileID: 7400000, guid: de8ae755ca53b114c986ef783f14297f, type: 2}
   - {fileID: 7400000, guid: 30f4f29404040c044bb83e0b952be72a, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
@@ -4568,8 +4589,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
